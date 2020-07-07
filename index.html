@@ -20,16 +20,18 @@
             constructor(){
                 super()
                 this.state = {
-                    tempoBom:false
+                    tempoBom:true
                 }
             }
 
             render(){
-              if(this.state.tempoBom){
-                return <p>Temos tempo bom</p>
-              }else {
-                return <p>Temos tempo ruim</p>
-              }
+            let texto;
+            if(this.state.tempoBom){
+                texto = <p>Teremos tempo Bom</p>
+            }else{
+                texto = <p>Teremos tempo ruim</p>
+            }
+            return texto;
             }
         }
 
