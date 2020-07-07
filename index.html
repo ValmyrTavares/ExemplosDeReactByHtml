@@ -17,24 +17,61 @@
     
         class App extends React.Component{
 
-            constructor(){
-                super()
-                this.state = {
-                    tempoBom:true
+            render(){
+
+                const noticias = [
+                {
+                    titulo:"Noticia1",
+                    texto:"Texto da notívia 1",
+                    autor: "autor da notívia 1"
+                },
+                {
+                    titulo:"Noticia2",
+                    texto:"Texto da notívia 2",
+                    autor: "autor da notívia 2"
+                },
+                {
+                    titulo:"Noticia3",
+                    texto:"Texto da notívia 3",
+                    autor: "autor da notívia 3"
                 }
+            ]
+
+            const final = noticias.map(novaNoticia => <Noticia noticia={novaNoticia}/> )
+
+            return (
+                <div>
+                    <h2>Noticias</h2>
+                    <hr/>
+                    {final}
+                    <Noticia noticia={noticias[0]}/>
+                </div>
+            )
+            }
+
+
+        }
+
+        class Noticia extends React.Component{
+
+            constructor(props){
+                super(props)
             }
 
             render(){
-            let texto;
-            if(this.state.tempoBom){
-                texto = <p>Teremos tempo Bom</p>
-            }else{
-                texto = <p>Teremos tempo ruim</p>
-            }
-            return texto;
+                return(
+                    <div>
+                        <h3>{this.props.noticia.titulo}</h3>
+                        <p>{this.props.noticia.texto}</p>
+                        <small><i>{this.props.noticia.autor}</i></small>
+                    </div>
+                )
             }
         }
 
+           
+
+          
 
           ReactDOM.render(
             <App />,
