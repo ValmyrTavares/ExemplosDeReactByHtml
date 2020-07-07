@@ -16,31 +16,23 @@
 
     <script type="text/babel">
 
-        class NovoApp extends React.Component{
+      class App extends React.Component{
 
-            constructor(){
-                super()
-                this.state = {
-                    nome:"João"
-                }
-            }
-
-            metodo = () =>{
-                this.setState({nome:"Joaquim"})
-            }
-
-            render(){
-                return(
-                    <div>
-                        <p>Nome:{this.state.nome}</p>
-                      <button onClick={this.metodo}>Clique</button>
-                    </div>
-                )
-            }
-        }
+          metodo = (x) =>{
+              console.log(x)
+          }
+           
+           render(){
+               return(
+                   <div>
+                        <button onClick={() => this.metodo("Ola Mundo")}>CLIQUE</button>
+                   </div>
+               )
+           }
+      }
 
           ReactDOM.render(
-            <NovoApp />,
+            <App />,
             document.getElementById('root')
              )             
 
