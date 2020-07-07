@@ -12,24 +12,42 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-
-
+       
     <script type="text/babel">
+    
+    class App extends React.Component{
 
-      class App extends React.Component{
+        metodo(){
+            console.log("Ola Pai")
+        }
 
-          metodo = (x) =>{
-              console.log(x)
-          }
-           
-           render(){
-               return(
-                   <div>
-                        <button onClick={() => this.metodo("Ola Mundo")}>CLIQUE</button>
-                   </div>
-               )
-           }
-      }
+        render(){
+            return (
+                <div>
+                    <p>Texto do componente Pai</p>
+                    < CompA metodo = {this.metodo}/>
+                </div>
+            )
+                
+                
+              
+            
+        }
+
+        }
+
+        class CompA extends React.Component {
+
+            render(){
+                return (
+                    <div>
+                      
+                        <button onClick={this.props.metodo}>Clique no filho</button>
+                    </div>
+                )
+            }
+        }
+
 
           ReactDOM.render(
             <App />,
