@@ -16,28 +16,29 @@
 
     <script type="text/babel">
 
-        
-   function CompA(props){
-       return(
-           <div>
-                <p>Ola, {props.nome} {props.apelido}</p>
-           </div>
-       )
-   }
+        function CompA(props){
+            return(
+                <div>
+                    <p>Nome: {props.nome}</p>
+                </div>
+            )
+        }
 
-   class CompB extends React.Component{
-       render(){
-           return(
-               <div>
-                    <p>Ola {this.props.nome} {this.props.apelido} </p>
-               </div>
-           )
-       }
-   }
+        function App(){
+            return(
+                <div>
+                    <CompA nome="Ana"/>
+                    <CompA nome="João"/>
+                    <CompA nome="Antonio"/>
+                     <CompA nome="Carla"/>
+                </div>
+            )
+        }
+ 
 
 
         const root = document.getElementById('root')
-        ReactDOM.render(<CompB nome="Valmyr Tavares" apelido="Malta de Lima"/>, root)
+        ReactDOM.render(<App nome="Valmyr Tavares" apelido="Malta de Lima"/>, root)
     </script>
     
 </body>
