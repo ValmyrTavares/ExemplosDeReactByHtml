@@ -17,11 +17,32 @@
     <script type="text/babel">
 
         
-    class App extends React.Component{
+    class CompA extends React.Component{
         render(){
             return(
                 <div>
-                    <p>Teste</p>
+                    <p>CompA</p>
+                   
+                </div>
+            )
+        }
+    }
+
+    class CompB extends React.Component{
+        render(){
+            return(
+                <div>
+                    <p>CompB</p>
+                </div>
+            )
+        }
+    }
+    class MeuComponente extends React.Component{
+        render(){
+            return(
+                <div>
+                    <CompA />
+                    <CompB />
                 </div>
             )
         }
@@ -30,7 +51,7 @@
 
 
         const root = document.getElementById('root')
-        ReactDOM.render(<App/>, root)
+        ReactDOM.render(<MeuComponente/>, root)
     </script>
     
 </body>
