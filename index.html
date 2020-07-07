@@ -17,8 +17,8 @@
     
     class App extends React.Component{
 
-        metodo(){
-            console.log("Ola Pai")
+        metodo(texto){
+            console.log(texto)
         }
 
         render(){
@@ -42,7 +42,7 @@
                 return (
                     <div>
                       
-                        <button onClick={this.props.metodo}>Clique no filho</button>
+                        <button onClick={()=> this.props.metodo("Fala ai camarada")}>Clique no filho</button>
                     </div>
                 )
             }
