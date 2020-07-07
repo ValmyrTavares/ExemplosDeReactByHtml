@@ -15,45 +15,31 @@
        
     <script type="text/babel">
     
-        class App extends React.Component{           
+      class App extends React.Component{
 
-            render(){
-
-               const socios = [
-                {
-                    nome:"João",
-                    idade: 46
-                },
-                {
-                    nome:"Ana",
-                    idade: 25
-                }
-            ]
-            const final = socios.map(socio => <MostrarSocio key={socio.nome} socio={socio}/>)
-             
-
-                return (
-                    <div>
-                        <h1>Socios vigentes</h1>
-                        {final}
-                    </div>
-                )
-
+        constructor(){
+            super()
+            this.state={
+                nome:"João"
             }
-        }
-        class MostrarSocio extends React.Component{
 
-            render(){
-                return(
-                    <div>                  
-                        <h3>Nome: {this.props.socio.nome}</h3>
-                        <h4>Idade: {this.props.socio.idade}</h4>
-                        <hr/>
-                    </div>
-                )
-            }
         }
-      
+
+
+             alterarNome = (event) =>{
+                this.setState({nome: event.target.value})
+            }
+
+
+          render(){
+              return(
+                  <div>
+                    <input type="text" value={this.state.nome} onChange={this.alterarNome}/>
+                    <p>Valor:{this.state.nome}</p>
+                  </div>
+              )
+          }
+      }    
            
 
           
