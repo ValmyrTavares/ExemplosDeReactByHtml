@@ -16,37 +16,98 @@
 
     <script type="text/babel">
 
-     class App extends React.Component {
-        //----------------------------        
+    class Pai extends React.Component{
+
+        render(){
+            return(
+                <div>
+                <h2>Pai</h2>
+                <Filho1 />   
+                <Filho2 />   
+                <Filho3 />           
+                    
+                </div>
+            )
+        }
+    }
+
+
+    class Filho1 extends React.Component{
+
         constructor(props){
             super(props)
-
-            this.state={
-                nome:"João"
+            this.state = {
+                nome: "João"
             }
-            this.cmd_Click = this.cmd_Click.bind(this)
+            this.Alterar = this.Alterar.bind(this)
         }
-        //-------------------------------
-           cmd_Click(){
-               this.setState({nome:"Joaquim" })
-           }
 
-        //----------------------------------
+        Alterar(){
+            this.setState({nome:"Antonio"})
+        }
 
-         render(){
-             return(
-                 <div>
-                    <p>Nome:{this.state.nome}</p>
-                    <button onClick={this.cmd_Click}>Clique</button>
-                 </div>
-             )
-         }
-     }
-       
+        render(){
+            return(
+                <div>
+                    <p>Nome: {this.state.nome}</p>
+                    <button onClick={this.Alterar}>Alterar</button>
+                </div>
+            )
+        }
+    }
+
+    class Filho2 extends React.Component{
+
+        constructor(props){
+            super(props)
+            this.state = {
+                nome: "João"
+            }
+            this.Alterar = this.Alterar.bind(this)
+        }
+
+        Alterar(){
+            this.setState({nome:"Alberto"})
+        }
+
+        render(){
+            return(
+                <div>
+                    <p>Nome: {this.state.nome}</p>
+                    <button onClick={this.Alterar}>Alterar</button>
+                </div>
+            )
+        }
+    }
+
+    class Filho3 extends React.Component{
+
+        constructor(props){
+            super(props)
+            this.state = {
+                nome: "João"
+            }
+            this.Alterar = this.Alterar.bind(this)
+        }
+
+        Alterar(){
+            this.setState({nome:"Cristiano"})
+        }
+
+        render(){
+            return(
+                <div>
+                    <p>Nome: {this.state.nome}</p>
+                    <button onClick={this.Alterar}>Alterar</button>
+                </div>
+            )
+        }
+    }
+            
 
   
         ReactDOM.render(
-            <App />,
+            <Pai />,
             document.getElementById('root')
              )             
 
