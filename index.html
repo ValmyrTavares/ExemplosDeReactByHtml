@@ -15,36 +15,21 @@
        
     <script type="text/babel">
     
-    class App extends React.Component{
+        class App extends React.Component{
 
-        metodo(texto){
-            console.log(texto)
-        }
-
-        render(){
-            return (
-                <div>
-                    <p>Texto do componente Pai</p>
-                    < CompA metodo = {this.metodo}/>
-                </div>
-            )
-                
-                
-              
-            
-        }
-
-        }
-
-        class CompA extends React.Component {
+            constructor(){
+                super()
+                this.state = {
+                    tempoBom:false
+                }
+            }
 
             render(){
-                return (
-                    <div>
-                      
-                        <button onClick={()=> this.props.metodo("Fala ai camarada")}>Clique no filho</button>
-                    </div>
-                )
+              if(this.state.tempoBom){
+                return <p>Temos tempo bom</p>
+              }else {
+                return <p>Temos tempo ruim</p>
+              }
             }
         }
 
