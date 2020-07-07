@@ -16,32 +16,38 @@
     <script type="text/babel">
     
      class App extends React.Component{
-
          constructor(){
              super()
-             this.state = {
-                 item:"item3"
-             }
+             this.state ={
+                 username:'',
+                 password: ''
+             } 
          }
 
-         alterarItem = event=>{
-            this.setState({item: event.target.value})
+         alterarUsername = (e) => {
+             this.setState({username: e.target.value})
          }
 
+         alterarPassword = (e)=>{
+             this.setState({password: e.target.value})
+         }
+
+         submeterForm = () =>{
+             console.log(this.state)
+         }
          render(){
-             return(
-                 <div>
-                    <select value={this.state.item} onChange={this.alterarItem}>
-                        <option value="item1">item 1</option>
-                        <option value="item2">item 2</option>
-                        <option value="item3">item 3</option>
-                    </select>
-                    <p>{this.state.item}</p>
-                 </div>
-             )
-         }
-     }         
+         return(
+             <form onSubmit={this.submeterForm}>
+                <input type="text" value={this.state.username} onChange={this.alterarUsername}/>
+                <input type="password" value={this.state.password} onChange={this.alterarPassword}/>
+                <input type="submit" value="Salvar"/>
+             </form>
+         )
+     }
 
+     }
+
+   
           ReactDOM.render(
             <App />,
             document.getElementById('root')
