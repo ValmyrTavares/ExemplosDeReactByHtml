@@ -16,32 +16,49 @@
 
     <script type="text/babel">
 
-        class App extends React.Component{
+       class Identificacao extends React.Component{
 
            constructor(){
                super()
-
                this.state = {
-                   nome: "João",
-                   idade: 45
+                   nome: "João Ribeiro",
+                   idade: 46
                }
            }
+           render(){
+               return(
+                   <div>
+                        <Nome nome={this.state.nome}/>
+                        <Idade idade={this.state.idade} />
+                   </div>
+               )
+           }
+       }
 
+       class Nome extends React.Component{
+           render(){
+               return(
+               <div>
+                    <p>Nome:{this.props.nome} </p>
+               </div>
+               )
+           }
+       }
 
-            render(){
-                return(
+       class Idade extends React.Component{
+           render(){
+               return(
                     <div>
-                        <p>Nome {this.state.nome} {this.props.apelido}</p>
-                        <p>Idade {this.state.idade}</p>
-                    </div>
-                )
-            }
-        }
+                        <p>Idade:{this.props.idade} </p>
+                    </div>)
+           }
+       }
 
+       
 
   
         ReactDOM.render(
-            <App apelido={"Ribeiro"}/>,
+            <Identificacao />,
             document.getElementById('root')
              )             
 
