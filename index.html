@@ -16,21 +16,34 @@
 
     <script type="text/babel">
 
-    function Tempo(){
-    const conteudo = (
-        <div>
-            <h3>Tempo Atual</h3>
-            <p>Estamos na seguinte hora{new Date().toLocaleTimeString()}</p>
-        </div>
-    )
+        class App extends React.Component{
+
+           constructor(){
+               super()
+
+               this.state = {
+                   nome: "João",
+                   idade: 45
+               }
+           }
+
+
+            render(){
+                return(
+                    <div>
+                        <p>Nome {this.state.nome} {this.props.apelido}</p>
+                        <p>Idade {this.state.idade}</p>
+                    </div>
+                )
+            }
+        }
+
+
+  
         ReactDOM.render(
-            conteudo,
+            <App apelido={"Ribeiro"}/>,
             document.getElementById('root')
-             )
-    }
-
-             setInterval(Tempo, 1000)
-
+             )             
 
     </script>
     
