@@ -25,9 +25,19 @@
        )
    }
 
+   class CompB extends React.Component{
+       render(){
+           return(
+               <div>
+                    <p>Ola {this.props.nome} {this.props.apelido} </p>
+               </div>
+           )
+       }
+   }
+
 
         const root = document.getElementById('root')
-        ReactDOM.render(<CompA nome="Valmyr Tavares" apelido="Malta de Lima"/>, root)
+        ReactDOM.render(<CompB nome="Valmyr Tavares" apelido="Malta de Lima"/>, root)
     </script>
     
 </body>
