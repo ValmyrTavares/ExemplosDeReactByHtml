@@ -16,59 +16,31 @@
 
     <script type="text/babel">
 
-    class Pai extends React.Component{
+        class NovoApp extends React.Component{
 
-        constructor(){
-            super()
-            this.state = {
-                nome_primeiro: "",
-                nome_ultimo: ""
+            constructor(){
+                super()
+                this.state = {
+                    nome:"João"
+                }
+            }
+
+            metodo = () =>{
+                this.setState({nome:"Joaquim"})
+            }
+
+            render(){
+                return(
+                    <div>
+                        <p>Nome:{this.state.nome}</p>
+                      <button onClick={this.metodo}>Clique</button>
+                    </div>
+                )
             }
         }
 
-        render(){
-            return(
-                <div>
-                <h2>Pai</h2>
-                <Filho1 nome_primeiro="Carlos" nome_ultimo="Antônio"/>   
-                <Filho1 nome_primeiro={"Ana"} nome_ultimo={"Carla"}/>     
-                <Filho1 nome_primeiro={"Valmyr"} nome_ultimo={"Tavares"}/>          
-                    
-                </div>
-            )
-        }
-    }
-
-
-    class Filho1 extends React.Component{
-
-        constructor(props){
-            super(props)
-            this.state = {
-               nome: this.props.nome_primeiro
-              
-            }
-            this.Alterar = this.Alterar.bind(this)
-        }
-
-        Alterar(){
-            this.setState({nome:this.props.nome_ultimo})
-        }
-
-        render(){
-            return(
-                <div>
-                    <p>Nome: {this.state.nome}  </p>
-                    <button onClick={this.Alterar}>Alterar</button>
-                </div>
-            )
-        }
-    }  
-            
-
-  
-        ReactDOM.render(
-            <Pai />,
+          ReactDOM.render(
+            <NovoApp />,
             document.getElementById('root')
              )             
 
